@@ -6,7 +6,7 @@ export default {
   telemetry: false,
   env: {
     PROD: '1',
-    ANDROID_APP_URL: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
+    ANDROID_APP_URL: 'https://github.com/ProgrammingDrak/audiobookshelf-app',
     IOS_APP_URL: ''
   },
 
@@ -15,16 +15,11 @@ export default {
   },
 
   head: {
-    title: 'Audiobookshelf',
+    title: 'QuietShelf',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'viewport-fit=cover, width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1' }, { hid: 'description', name: 'description', content: '' }, { name: 'format-detection', content: 'telephone=no' }],
-    script: [
-      {
-        src: '/libs/sortable.js'
-      }
-    ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 

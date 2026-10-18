@@ -181,12 +181,12 @@ export default {
      * Initiates the login process using OpenID via OAuth2.0.
      * 1. Verifying the server's address
      * 2. Calling oauthRequest() to obtain the special OpenID redirect URL
-     *      including a challenge and specying audiobookshelf://oauth as redirect URL
+     *      including a challenge and specying quietshelf://oauth as redirect URL
      * 3. Open this redirect URL in browser (which is a website of the SSO provider)
      *
      * When the browser is open, the following flow is expected:
-     * a. The user authenticates and the provider redirects back to custom URL audiobookshelf://oauth
-     * b. The app calls appUrlOpen() when `audiobookshelf://oauth` is called
+     * a. The user authenticates and the provider redirects back to custom URL quietshelf://oauth
+     * b. The app calls appUrlOpen() when `quietshelf://oauth` is called
      * b. appUrlOpen() handles the incoming URL and extracts the authorization code from GET parameter
      * c. oauthExchangeCodeForToken() exchanges the authorization code for an access token
      *
@@ -223,7 +223,7 @@ export default {
       let redirect_uri_param = redirectUrl.searchParams.get('redirect_uri')
       // Backwards compatability with 2.6.0
       if (this.serverConfig.version === '2.6.0') {
-        redirect_uri_param = 'audiobookshelf://oauth'
+        redirect_uri_param = 'quietshelf://oauth'
       }
 
       if (!client_id || !scope || !state || !redirect_uri_param) {
@@ -289,7 +289,7 @@ export default {
       this.oauth.verifier = verifier
       this.oauth.challenge = challenge
 
-      let backendEndpoint = `${url}/auth/openid?code_challenge=${challenge}&code_challenge_method=S256&redirect_uri=${encodeURIComponent('audiobookshelf://oauth')}&client_id=${encodeURIComponent('Audiobookshelf-App')}&response_type=code`
+      let backendEndpoint = `${url}/auth/openid?code_challenge=${challenge}&code_challenge_method=S256&redirect_uri=${encodeURIComponent('quietshelf://oauth')}&client_id=${encodeURIComponent('Audiobookshelf-App')}&response_type=code`
       // Backwards compatability with 2.6.0
       if (this.serverConfig.version === '2.6.0') {
         backendEndpoint += '&isRest=true'
@@ -336,9 +336,9 @@ export default {
       // Handle the OAuth callback
       const urlObj = new URL(url)
 
-      // audiobookshelf://oauth?code...
+      // quietshelf://oauth?code...
       // urlObj.hostname for iOS and urlObj.pathname for android
-      if (url.startsWith('audiobookshelf://oauth')) {
+      if (url.startsWith('quietshelf://oauth')) {
         // Extract possible errors thrown by the SSO provider
         const authError = urlObj.searchParams.get('error')
         if (authError) {
