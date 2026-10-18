@@ -91,3 +91,9 @@ sw.*
 
 /resources/
 /android/app/release/
+# Private signing material must never enter source control
+*.jks
+*.keystore
+*.p12
+*.pem
+.signing/

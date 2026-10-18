@@ -1,6 +1,6 @@
 {
   "name": "audiobookshelf-app",
-  "version": "0.14.2-beta",
+  "version": "0.1.0",
   "author": "advplyr",
   "scripts": {
     "dev": "nuxt --hostname 0.0.0.0 --port 1337",
@@ -14,7 +14,6 @@
     "devlive": "ionic cap run -l --external --port=1337"
   },
   "dependencies": {
-    "@webnativellc/capacitor-filesharer": "7.0.4",
     "@capacitor-community/keep-awake": "^7.0.0",
     "@capacitor-community/volume-buttons": "^7.0.0",
     "@capacitor/android": "^7.0.0",
@@ -30,11 +29,13 @@
     "@capacitor/status-bar": "^7.0.6",
     "@nuxtjs/axios": "^5.13.6",
     "@teckel/vue-pdf": "^4.3.5",
+    "@webnativellc/capacitor-filesharer": "7.0.4",
     "buffer": "^6.0.3",
     "cordova-plugin-screen-orientation": "^3.0.4",
     "core-js": "^3.15.1",
     "date-fns": "^2.25.0",
     "epubjs": "0.3.88",
+    "es6-promise-plugin": "4.2.2",
     "fast-average-color": "^9.3.0",
     "libarchive.js": "^1.3.0",
     "nuxt": "^2.15.7",
@@ -44,7 +45,7 @@
     "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
-    "@capacitor/cli": "^6.0.0",
+    "@capacitor/cli": "7.0.1",
     "autoprefixer": "^10.4.17",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1"
